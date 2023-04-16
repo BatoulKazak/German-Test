@@ -1,0 +1,151 @@
+/* @font-face {
+    font-family: Consolas;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Cascadia Code"), url("https://fonts.cdnfonts.com/s/29131/Cascadia.woff") format("woff");
+} */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    /* --background-colour: hsl(200, 50%, 50%);
+    --hue-wrong: hsl(0, 80%, 40%);
+    --hue-correct: hsl(200, 50%, 50%);
+    --hue-neutural: 200; */
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+    font-size: 62.5%;
+}
+
+::selection {
+    background-color: rgb(255, 9, 91);
+    color: #FFF;
+}
+
+body {
+    --hue: var(--hue-neutural);
+    font-size: 1.6rem;
+
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    color: black;
+    background-color: hsl(var(--hue), 100%, 20%);
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+button {
+    cursor: pointer;
+}
+
+#main-container {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    place-content: center;
+    place-items: center;
+}
+
+#scores {
+    width: 40%;
+    height: 6rem;
+
+    background-color: #FFF;
+    color: #000;
+
+    border-radius: 100vh;
+    border: 0.7rem groove navy;
+
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    place-items: center;
+
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: 2px 2px 6px black;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: #FFF;
+    border-radius: 5px;
+
+    padding: 10px;
+
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutural);
+    /* hsl(var(--hue), 100%, 30%) */
+    border: 1px solid blue;
+    background-color: navy;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #FFF;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: #000;
+}
+
+.btn.correct {
+    background-color: rgb(46, 220, 46);
+    color: #000;
+}
+
+.btn.wrong {
+    background-color: rgb(218, 39, 39);
+}
+
+.start-btn,
+.next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    place-content: center;
+    place-items: center;
+}
+
+.hide {
+    /* display: none; */
+}
